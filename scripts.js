@@ -68,17 +68,27 @@ document.addEventListener("DOMContentLoaded", function () {
         track.appendChild(projectItem);
     });
 
+    // メニュートグル機能の追加
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
     // カルーセル機能の実装  
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
     let currentSlide = 0;
 
     function updateCarousel() {
+        const isMobile = window.innerWidth <= 768;
         const totalSlides = data.length;
-        const maxVisibleSlides = 3;
+        const maxVisibleSlides = isMobile ? 1 : 3;
         const trackWidth = track.getBoundingClientRect().width;
-        const slideWidth = (trackWidth - (20 * (maxVisibleSlides - 1))) / maxVisibleSlides;
-        track.style.transform = `translateX(-${currentSlide * (slideWidth + 20)}px)`;
+        const slideWidth = isMobile ? trackWidth : (trackWidth - (20 * (maxVisibleSlides - 1))) / maxVisibleSlides;
+
+        track.style.transform = `translateX(-${currentSlide * (slideWidth + (isMobile ? 0 : 20))}px)`;
 
         prevButton.disabled = currentSlide === 0;
         nextButton.disabled = currentSlide >= totalSlides - maxVisibleSlides;
@@ -90,9 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nextButton.addEventListener('click', () => {
-        currentSlide = Math.min(currentSlide + 1, data.length - 3);
+        const isMobile = window.innerWidth <= 768;
+        const maxVisibleSlides = isMobile ? 1 : 3;
+        currentSlide = Math.min(currentSlide + 1, data.length - maxVisibleSlides);
         updateCarousel();
     });
 
+    // ウィンドウのリサイズ時にカルーセルを更新
+    window.addEventListener('resize', updateCarousel);
+
+    // 初期化時にカルーセルを更新
     updateCarousel();
 });  

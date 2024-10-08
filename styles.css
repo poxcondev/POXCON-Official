@@ -48,6 +48,21 @@ nav ul li a:hover {
     color: #007fff;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
 .hero {
     height: 100vh;
     display: flex;
@@ -155,7 +170,6 @@ h2 {
 
 .project-item {
     flex: 0 0 calc(33.3333% - 20px);
-    /* 隙間の分を引く */
     box-sizing: border-box;
     background-color: #111;
     padding: 20px;
@@ -239,4 +253,70 @@ a:active {
 
 a:visited {
     color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .project-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .carousel-button {
+        display: block; /* 'none'から'block'に変更 */
+        font-size: 1.5em; /* サイズを小さくして見やすく */
+        background-color: rgba(0, 0, 0, 0.7); /* 背景を少し濃くして見やすく */
+        padding: 10px; /* タップしやすいようにパディングを追加 */
+    }
+
+    .carousel-button.prev {
+        left: 5px;
+    }
+
+    .carousel-button.next {
+        right: 5px;
+    }
 }
