@@ -33,22 +33,26 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             "title": "Invoice Search",
             "description": "国税庁のインボイスAPIを使用した<br/>インボイス検索",
-            "image": "./img/InvoiceSearch.png"
+            "image": "./img/InvoiceSearch.png",
+            "url": "https://github.com/poxcondev/Invoice-Search"
         },
         {
             "title": "Slack Post Manager",
             "description": "Slackの投稿取得および<br/>OCR表示用クライアント",
-            "image": "./img/UnderConstruction.png"
+            "image": "./img/UnderConstruction.png",
+            "url": "https://github.com/poxcondev/Slack-Post-Manager"
         },
         {
             "title": "AOAI Chatbot",
             "description": "Azure OpenAIのチャットボット",
-            "image": "./img/UnderConstruction.png"
+            "image": "./img/UnderConstruction.png",
+            "url": "https://github.com/poxcondev/AOAI-Chatbot"
         },
         {
             "title": "MiPre",
             "description": "Minecraft環境一括セットアップツール",
-            "image": "./img/UnderConstruction.png"
+            "image": "./img/UnderConstruction.png",
+            "url": "https://github.com/poxcondev/MiPre"
         }
     ];
 
@@ -58,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         projectItem.classList.add('project-item');
         projectItem.innerHTML = `  
             <div class="project-image" style="background-image: url('${project.image}');"></div>  
-            <h3>${project.title}</h3>  
+            <h3><a href=${project.url} target="_blank">${project.title}</a></h3>  
             <p>${project.description}</p>  
         `;
         track.appendChild(projectItem);

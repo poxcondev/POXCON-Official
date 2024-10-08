@@ -224,3 +224,19 @@ footer {
     padding: 20px 0;
     background-color: #111;
 }
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
