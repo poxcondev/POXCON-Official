@@ -21,6 +21,18 @@ header {
     z-index: 1000;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -306,10 +318,14 @@ a:visited {
     }
 
     .carousel-button {
-        display: block; /* 'none'から'block'に変更 */
-        font-size: 1.5em; /* サイズを小さくして見やすく */
-        background-color: rgba(0, 0, 0, 0.7); /* 背景を少し濃くして見やすく */
-        padding: 10px; /* タップしやすいようにパディングを追加 */
+        display: block;
+        /* 'none'から'block'に変更 */
+        font-size: 1.5em;
+        /* サイズを小さくして見やすく */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* 背景を少し濃くして見やすく */
+        padding: 10px;
+        /* タップしやすいようにパディングを追加 */
     }
 
     .carousel-button.prev {
