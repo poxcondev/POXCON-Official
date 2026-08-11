@@ -41,31 +41,140 @@
   },
   "product": {
     "label": "Product",
-    "name": "Steam Server Manager",
-    "tagline": "Steam専用サーバーの構築・運用をGUIで完結",
-    "desc": "Steam Dedicated Server(専用サーバー)の検索・導入・設定・起動管理をGUIで完結させる Windows / Linux 向けデスクトップアプリです。SteamCMDのCLI操作や設定ファイルの手編集なしに、「検索して、落として、設定して、起動する」を誰でも行えます。",
-    "platforms": "Windows 10/11 (x64) / Linux (x64)",
     "oneTime": "買い切り",
     "download": "無料でダウンロード",
     "buy": "Proを購入",
     "buySoon": "Pro 販売準備中",
+    "viewDetails": "詳細を見る",
     "plans": {
-      "free": {
-        "name": "Free",
-        "features": {
-          "search": "サーバーの検索・導入・設定・起動管理",
-          "update": "アプリの自動アップデート",
-          "single": "サーバー1台まで登録可能"
+      "free": { "name": "Free" },
+      "pro": { "name": "Pro" }
+    }
+  },
+  "productPage": {
+    "back": "トップへ戻る",
+    "proBadge": "Pro",
+    "comingSoon": "スクリーンショット準備中",
+    "sections": {
+      "screenshots": "Screenshots",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "pricing": "Pricing",
+      "requirements": "Requirements",
+      "faq": "FAQ"
+    },
+    "ssm": {
+      "tagline": "Steam専用サーバーの構築・運用をGUIで完結",
+      "desc": "Steam Dedicated Server(専用サーバー)の検索・導入・設定・起動管理をGUIで完結させる Windows / Linux 向けデスクトップアプリです。SteamCMDのCLI操作や設定ファイルの手編集なしに、「検索して、落として、設定して、起動する」を誰でも行えます。",
+      "platforms": "Windows 10/11 (x64) / Linux (x64)",
+      "screenshots": {
+        "dashboard": "ダッシュボード — 登録サーバーの一覧と稼働状態",
+        "search": "サーバー検索 — 対応タイトルの検索と導入",
+        "config": "設定エディタ — GUIでの設定編集",
+        "console": "コンソール — 起動ログのリアルタイム表示"
+      },
+      "features": {
+        "search": {
+          "title": "サーバー検索",
+          "desc": "導入したいゲームのDedicated Serverをアプリ内で検索。SteamCMDの知識は不要です。"
+        },
+        "install": {
+          "title": "ワンクリック導入",
+          "desc": "検索結果からそのままダウンロード・インストール。CLI操作は一切ありません。"
+        },
+        "config": {
+          "title": "GUI設定エディタ",
+          "desc": "設定ファイルを手で編集することなく、GUIからサーバー設定を調整できます。"
+        },
+        "launch": {
+          "title": "起動・停止管理",
+          "desc": "サーバーの起動・停止・稼働状態をひと目で確認し、一元管理できます。"
+        },
+        "update": {
+          "title": "自動アップデート",
+          "desc": "アプリ本体は自動アップデートに対応。常に最新の状態で利用できます。"
+        },
+        "multi": {
+          "title": "複数サーバー登録",
+          "desc": "複数のゲームサーバーを登録し、切り替えながら運用できます。"
+        },
+        "mods": {
+          "title": "Mod管理",
+          "desc": "Modの導入・管理もGUIで完結します。"
+        },
+        "backup": {
+          "title": "自動バックアップ",
+          "desc": "サーバーデータを自動でバックアップし、万一に備えます。"
         }
       },
-      "pro": {
-        "name": "Pro",
-        "features": {
-          "multi": "複数サーバーの登録",
-          "mods": "Mod管理",
-          "backup": "自動バックアップ",
-          "seats": "3台までライセンス認証可能"
+      "steps": {
+        "search": {
+          "title": "検索",
+          "desc": "立てたいゲームのDedicated Serverをアプリ内で検索します。"
+        },
+        "install": {
+          "title": "ダウンロード",
+          "desc": "ワンクリックでサーバー本体を導入。SteamCMDの操作は不要です。"
+        },
+        "configure": {
+          "title": "設定",
+          "desc": "GUIエディタでポートやゲーム設定を調整します。"
+        },
+        "launch": {
+          "title": "起動",
+          "desc": "ボタンひとつでサーバーを起動。あとは遊ぶだけです。"
         }
+      },
+      "pricing": {
+        "note": "Pro は買い切りライセンスです。サブスクリプションではありません。",
+        "rows": {
+          "core": { "label": "サーバーの検索・導入・設定・起動管理" },
+          "update": { "label": "アプリの自動アップデート" },
+          "servers": { "label": "登録可能サーバー数", "free": "1台", "pro": "複数" },
+          "mods": { "label": "Mod管理" },
+          "backup": { "label": "自動バックアップ" },
+          "seats": { "label": "ライセンス認証台数", "pro": "3台まで" }
+        }
+      },
+      "requirements": {
+        "os": {
+          "label": "OS",
+          "value": "Windows 10/11 (x64) / Linux (x64)"
+        },
+        "network": {
+          "label": "ネットワーク",
+          "value": "サーバー本体のダウンロードおよびアップデートにインターネット接続が必要です。"
+        },
+        "storage": {
+          "label": "ストレージ",
+          "value": "アプリ本体は約7MB。サーバーを追加するごとに、導入するゲームサーバーに応じて使用容量が増加します。"
+        }
+      },
+      "faq": {
+        "games": {
+          "q": "どのゲームのサーバーに対応していますか?",
+          "a": "SteamCMD経由で配信されているDedicated Server対応タイトルを検索・導入できます。対応タイトルはアプリ内の検索で確認できます。"
+        },
+        "license": {
+          "q": "Proは買い切りですか?",
+          "a": "はい。¥1,980の買い切りで、月額費用はかかりません。1ライセンスで最大3台まで認証できます。"
+        },
+        "difference": {
+          "q": "FreeとProの違いは何ですか?",
+          "a": "Freeではサーバー1台まで登録できます。Proでは複数サーバーの登録に加え、Mod管理と自動バックアップが利用できます。"
+        },
+        "updates": {
+          "q": "アップデートに追加費用はかかりますか?",
+          "a": "かかりません。アプリは自動アップデートに対応しており、無料で最新版に更新されます。"
+        },
+        "refund": {
+          "q": "購入後の返金はできますか?",
+          "a": "いいえ。ご購入時にライセンスキーを発行する性質上、購入後の返金には対応しておりません。ご購入前にFree版で動作をご確認ください。"
+        }
+      },
+      "cta": {
+        "title": "Get Started",
+        "sub": "まずはFreeで。気に入ったらProへ。"
       }
     }
   },

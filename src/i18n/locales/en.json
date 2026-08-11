@@ -41,31 +41,140 @@
   },
   "product": {
     "label": "Product",
-    "name": "Steam Server Manager",
-    "tagline": "Steam dedicated servers, managed entirely through a GUI",
-    "desc": "A desktop app for Windows and Linux that lets you search, install, configure and run Steam dedicated servers — all from a GUI. No SteamCMD command-line work, no hand-editing config files: anyone can search, download, configure and launch.",
-    "platforms": "Windows 10/11 (x64) / Linux (x64)",
     "oneTime": "One-time",
     "download": "Download free",
     "buy": "Get Pro",
     "buySoon": "Pro coming soon",
+    "viewDetails": "View details",
     "plans": {
-      "free": {
-        "name": "Free",
-        "features": {
-          "search": "Search, install, configure and run servers",
-          "update": "Automatic app updates",
-          "single": "Register up to 1 server"
+      "free": { "name": "Free" },
+      "pro": { "name": "Pro" }
+    }
+  },
+  "productPage": {
+    "back": "Back to home",
+    "proBadge": "Pro",
+    "comingSoon": "Screenshot coming soon",
+    "sections": {
+      "screenshots": "Screenshots",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "pricing": "Pricing",
+      "requirements": "Requirements",
+      "faq": "FAQ"
+    },
+    "ssm": {
+      "tagline": "Steam dedicated servers, managed entirely through a GUI",
+      "desc": "A desktop app for Windows and Linux that lets you search, install, configure and run Steam dedicated servers — all from a GUI. No SteamCMD command-line work, no hand-editing config files: anyone can search, download, configure and launch.",
+      "platforms": "Windows 10/11 (x64) / Linux (x64)",
+      "screenshots": {
+        "dashboard": "Dashboard — registered servers and their status",
+        "search": "Server search — find and install supported titles",
+        "config": "Config editor — edit settings through the GUI",
+        "console": "Console — real-time launch logs"
+      },
+      "features": {
+        "search": {
+          "title": "Server Search",
+          "desc": "Find the dedicated server for your game right inside the app. No SteamCMD knowledge required."
+        },
+        "install": {
+          "title": "One-Click Install",
+          "desc": "Download and install straight from the search results. No command-line work at all."
+        },
+        "config": {
+          "title": "GUI Config Editor",
+          "desc": "Adjust server settings from the GUI — no hand-editing of config files."
+        },
+        "launch": {
+          "title": "Launch & Stop Control",
+          "desc": "Start, stop and monitor your servers at a glance, all in one place."
+        },
+        "update": {
+          "title": "Auto Updates",
+          "desc": "The app keeps itself up to date automatically, so you are always on the latest version."
+        },
+        "multi": {
+          "title": "Multiple Servers",
+          "desc": "Register multiple game servers and switch between them as you operate."
+        },
+        "mods": {
+          "title": "Mod Management",
+          "desc": "Install and manage mods entirely through the GUI."
+        },
+        "backup": {
+          "title": "Auto Backups",
+          "desc": "Server data is backed up automatically, just in case."
         }
       },
-      "pro": {
-        "name": "Pro",
-        "features": {
-          "multi": "Register multiple servers",
-          "mods": "Mod management",
-          "backup": "Automatic backups",
-          "seats": "License activation on up to 3 devices"
+      "steps": {
+        "search": {
+          "title": "Search",
+          "desc": "Find the dedicated server for the game you want to host, inside the app."
+        },
+        "install": {
+          "title": "Download",
+          "desc": "Install the server with one click — no SteamCMD involved."
+        },
+        "configure": {
+          "title": "Configure",
+          "desc": "Tune ports and game settings with the GUI editor."
+        },
+        "launch": {
+          "title": "Launch",
+          "desc": "Start the server with a single button. Then just play."
         }
+      },
+      "pricing": {
+        "note": "Pro is a one-time license. No subscription.",
+        "rows": {
+          "core": { "label": "Search, install, configure and run servers" },
+          "update": { "label": "Automatic app updates" },
+          "servers": { "label": "Registered servers", "free": "1", "pro": "Multiple" },
+          "mods": { "label": "Mod management" },
+          "backup": { "label": "Automatic backups" },
+          "seats": { "label": "License activations", "pro": "Up to 3 devices" }
+        }
+      },
+      "requirements": {
+        "os": {
+          "label": "OS",
+          "value": "Windows 10/11 (x64) / Linux (x64)"
+        },
+        "network": {
+          "label": "Network",
+          "value": "An internet connection is required to download and update server files."
+        },
+        "storage": {
+          "label": "Storage",
+          "value": "The app itself is about 7 MB. Disk usage grows with each game server you install."
+        }
+      },
+      "faq": {
+        "games": {
+          "q": "Which games are supported?",
+          "a": "You can search for and install any dedicated-server title distributed through SteamCMD. Check the in-app search for supported titles."
+        },
+        "license": {
+          "q": "Is Pro a one-time purchase?",
+          "a": "Yes. Pro costs ¥1,980 once — no monthly fees. One license can be activated on up to 3 devices."
+        },
+        "difference": {
+          "q": "What is the difference between Free and Pro?",
+          "a": "Free lets you register one server. Pro adds multiple server registrations, mod management and automatic backups."
+        },
+        "updates": {
+          "q": "Do updates cost extra?",
+          "a": "No. The app updates itself automatically, free of charge."
+        },
+        "refund": {
+          "q": "Can I get a refund after purchase?",
+          "a": "No. Because a license key is issued at the time of purchase, refunds are not available. Please try the Free version first to make sure the app works for you."
+        }
+      },
+      "cta": {
+        "title": "Get Started",
+        "sub": "Start with Free. Upgrade to Pro when you love it."
       }
     }
   },

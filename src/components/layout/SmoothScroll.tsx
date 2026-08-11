@@ -1,15 +1,16 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { LenisContext } from './lenis-context';
 
 interface SmoothScrollProps {
   children: ReactNode;
 }
 
 export const SmoothScroll = ({ children }: SmoothScrollProps) => {
-  const lenisRef = useRef<Lenis | null>(null);
+  const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    const lenis = new Lenis({
+    const instance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
@@ -17,14 +18,12 @@ export const SmoothScroll = ({ children }: SmoothScrollProps) => {
       smoothWheel: true,
     });
 
-    lenisRef.current = lenis;
+    setLenis(instance);
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+    let rafId = requestAnimationFrame(function raf(time: number) {
+      instance.raf(time);
+      rafId = requestAnimationFrame(raf);
+    });
 
     // Handle anchor link navigation
     const handleAnchorClick = (e: MouseEvent) => {
@@ -39,16 +38,22 @@ export const SmoothScroll = ({ children }: SmoothScrollProps) => {
       if (!el) return;
 
       e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: -80 });
+      instance.scrollTo(el as HTMLElement, { offset: -80 });
     };
 
     document.addEventListener('click', handleAnchorClick);
 
     return () => {
       document.removeEventListener('click', handleAnchorClick);
-      lenis.destroy();
+      cancelAnimationFrame(rafId);
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
 
-  return <div className="smooth-scroll-wrapper">{children}</div>;
+  return (
+    <LenisContext.Provider value={lenis}>
+      <div className="smooth-scroll-wrapper">{children}</div>
+    </LenisContext.Provider>
+  );
 };

@@ -1,40 +1,29 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
+import { ScrollManager } from '@/components/layout/ScrollManager';
 import { Header } from '@/components/layout/Header';
 import { Cursor } from '@/components/ui/Cursor';
-import { Marquee } from '@/components/ui/Marquee';
-import { Hero } from '@/components/sections/Hero';
-import { About } from '@/components/sections/About';
-import { Works } from '@/components/sections/Works';
-import { Product } from '@/components/sections/Product';
-import { Skills } from '@/components/sections/Skills';
-import { Contact } from '@/components/sections/Contact';
-import projectsData from '@/data/projects.json';
-
-const MARQUEE_ITEMS = [
-  'Azure AI',
-  'Generative AI',
-  'Cloud Architecture',
-  'Full-Stack Engineering',
-  'Consulting',
-];
+import { Home } from '@/pages/Home';
+import { ProductDetail } from '@/pages/ProductDetail';
 
 function App() {
   return (
-    <SmoothScroll>
-      <Cursor />
-      <div className="noise-overlay" />
-      <Header />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <SmoothScroll>
+        <ScrollManager />
+        <Cursor />
+        <div className="noise-overlay" />
+        <Header />
 
-      <main className="relative">
-        <Hero />
-        <Marquee items={MARQUEE_ITEMS} />
-        <About />
-        <Works projects={projectsData.projects} />
-        <Product />
-        <Skills />
-        <Contact />
-      </main>
-    </SmoothScroll>
+        <main className="relative">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:slug" element={<ProductDetail />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+      </SmoothScroll>
+    </BrowserRouter>
   );
 }
 
