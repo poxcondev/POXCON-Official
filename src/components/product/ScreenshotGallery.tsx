@@ -60,7 +60,7 @@ function ScreenshotFrame({ product, id, index }: ScreenshotFrameProps) {
             alt={caption}
             loading="lazy"
             onError={() => setFailed(true)}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         )}
       </div>
