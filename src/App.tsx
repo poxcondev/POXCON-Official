@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Cursor } from '@/components/ui/Cursor';
 import { Home } from '@/pages/Home';
 import { ProductDetail } from '@/pages/ProductDetail';
+import { LegalPage } from '@/pages/LegalPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products/:slug" element={<ProductDetail />} />
+            <Route path="/legal/:slug" element={<LegalPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

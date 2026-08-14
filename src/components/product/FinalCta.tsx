@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowUp, ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import {
   ctaAccentClass,
   ctaDisabledClass,
   ctaGhostClass,
 } from '@/components/ui/cta';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 import type { Product } from '@/data/products';
 
 interface FinalCtaProps {
@@ -15,10 +16,6 @@ interface FinalCtaProps {
 export function FinalCta({ product }: FinalCtaProps) {
   const { t } = useTranslation();
   const ns = `productPage.${product.i18nKey}`;
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <section className="px-6 md:px-10 pt-12 md:pt-16 pb-8">
@@ -82,18 +79,7 @@ export function FinalCta({ product }: FinalCtaProps) {
         </motion.div>
       </div>
 
-      {/* Footer row */}
-      <div className="flex items-center justify-between gap-4 border-t border-line pt-6 pb-2 font-mono text-[0.6rem] md:text-xs uppercase tracking-[0.25em] text-mute">
-        <span>{t('meta.copyright')}</span>
-        <button
-          onClick={scrollToTop}
-          className="group inline-flex items-center gap-2 hover:text-ink transition-colors"
-          aria-label={t('contact.top')}
-        >
-          {t('contact.top')}
-          <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
-        </button>
-      </div>
+      <SiteFooter />
     </section>
   );
 }

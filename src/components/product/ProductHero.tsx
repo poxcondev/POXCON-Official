@@ -7,6 +7,7 @@ import {
   ctaDisabledClass,
   ctaGhostClass,
 } from '@/components/ui/cta';
+import { TRADEMARK_NOTICE } from '@/data/site';
 import type { Product } from '@/data/products';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -16,8 +17,10 @@ interface ProductHeroProps {
 }
 
 export function ProductHero({ product }: ProductHeroProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const ns = `productPage.${product.i18nKey}`;
+  // 英語表示時は本文自体が英語のため、英語サマリの併記は省く
+  const showEnglishSummary = !i18n.language.startsWith('en');
 
   return (
     <section className="px-6 md:px-10 pt-32 md:pt-44 pb-16 md:pb-24">
@@ -71,6 +74,28 @@ export function ProductHero({ product }: ProductHeroProps) {
         {t(`${ns}.platforms`)}
       </motion.p>
 
+      {showEnglishSummary && (
+        <motion.div
+          lang="en"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="mt-10 max-w-2xl border-l border-line pl-5"
+        >
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.3em] text-accent">
+            Overview (English)
+          </p>
+          {product.summaryEn.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="mt-3 text-sm text-mute leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </motion.div>
+      )}
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -102,6 +127,16 @@ export function ProductHero({ product }: ProductHeroProps) {
           </span>
         )}
       </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="mt-8 max-w-2xl text-[0.65rem] leading-relaxed text-mute/60"
+      >
+        {TRADEMARK_NOTICE.ja}
+        <span className="block">{TRADEMARK_NOTICE.en}</span>
+      </motion.p>
     </section>
   );
 }
