@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { findProduct } from '@/data/products';
+import { findProduct, findRedirectSlug } from '@/data/products';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 import { ProductHero } from '@/components/product/ProductHero';
 import { ScreenshotGallery } from '@/components/product/ScreenshotGallery';
 import { FeatureGrid } from '@/components/product/FeatureGrid';
@@ -13,15 +13,17 @@ import { FinalCta } from '@/components/product/FinalCta';
 export function ProductDetail() {
   const { slug } = useParams();
   const product = findProduct(slug);
+  const redirectSlug = findRedirectSlug(slug);
 
-  useEffect(() => {
-    if (!product) return;
-    const previousTitle = document.title;
-    document.title = `${product.name} — Novexar`;
-    return () => {
-      document.title = previousTitle;
-    };
-  }, [product]);
+  useDocumentMeta(
+    product ? `${product.name} — Novexar` : 'Novexar',
+    product?.metaDescriptionEn
+  );
+
+  // 旧スラッグ（リブランド前の URL）で来た場合は現行の製品ページへ寄せる
+  if (!product && redirectSlug) {
+    return <Navigate to={`/products/${redirectSlug}`} replace />;
+  }
 
   if (!product) {
     return <Navigate to="/" replace />;

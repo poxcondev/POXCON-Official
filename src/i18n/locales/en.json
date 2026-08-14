@@ -36,8 +36,16 @@
       "miharashi-official": "Official website for the Miharashi drive-in",
       "invoice-search": "Invoice consistency checker powered by Japan's NTA API",
       "multiple-ai-chatbot": "Chat with multiple AI models side by side",
-      "steam-dedicated-server-client": "Desktop client for building and managing Steam dedicated servers"
+      "novexar-server-manager": "Desktop app for building and managing dedicated game servers"
     }
+  },
+  "legal": {
+    "label": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "updated": "Last updated",
+    "back": "Back to home"
   },
   "product": {
     "label": "Product",
@@ -169,7 +177,7 @@
         },
         "refund": {
           "q": "Can I get a refund after purchase?",
-          "a": "No. Because a license key is issued at the time of purchase, refunds are not available. Please try the Free version first to make sure the app works for you."
+          "a": "Yes — you can request a refund within 14 days of purchase by replying to your purchase confirmation email or contacting our support page. See the refund policy for details. We still recommend trying the Free version first to make sure the app works for you."
         }
       },
       "cta": {

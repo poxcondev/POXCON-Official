@@ -1,19 +1,17 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight, ArrowUp } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SiteFooter } from '@/components/layout/SiteFooter';
+import { SITE } from '@/data/site';
 
 const LINKS = [
-  { id: 'github', href: 'https://github.com/novexar' },
+  { id: 'github', href: SITE.githubUrl },
   { id: 'org', href: 'https://github.com/POXCON' },
 ] as const;
 
 export const Contact = () => {
   const { t } = useTranslation();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <section id="contact" className="px-6 md:px-10 pt-28 md:pt-40 pb-8">
@@ -68,18 +66,7 @@ export const Contact = () => {
         </motion.div>
       </div>
 
-      {/* Footer row */}
-      <div className="flex items-center justify-between gap-4 border-t border-line pt-6 pb-2 font-mono text-[0.6rem] md:text-xs uppercase tracking-[0.25em] text-mute">
-        <span>{t('meta.copyright')}</span>
-        <button
-          onClick={scrollToTop}
-          className="group inline-flex items-center gap-2 hover:text-ink transition-colors"
-          aria-label={t('contact.top')}
-        >
-          {t('contact.top')}
-          <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
-        </button>
-      </div>
+      <SiteFooter />
     </section>
   );
 };

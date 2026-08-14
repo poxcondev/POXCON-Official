@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      旧製品スラッグ (products/steam-server-manager) の受け皿。
+      製品名の変更に伴い products/server-manager へ移設したため、
+      JS 無効環境でも辿れるよう meta refresh + canonical で恒久移設を伝える。
+      SPA 内のリンク経由（JS 有効）は React Router 側でもリダイレクトする。
+    -->
+    <title>Novexar Server Manager</title>
+    <link rel="canonical" href="/Novexar-Official/products/server-manager" />
+    <meta
+      http-equiv="refresh"
+      content="0; url=/Novexar-Official/products/server-manager"
+    />
+    <meta name="robots" content="noindex, follow" />
+    <script>
+      window.location.replace('/Novexar-Official/products/server-manager');
+    </script>
+  </head>
+  <body>
+    <p>
+      このページは
+      <a href="/Novexar-Official/products/server-manager"
+        >Novexar Server Manager</a
+      >
+      へ移動しました。
+    </p>
+  </body>
+</html>
